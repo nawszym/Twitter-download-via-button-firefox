@@ -1,0 +1,20 @@
+# AMO API credentials - NEVER commit this file
+amo-credentials.txt
+.web-ext-config.mjs
+.web-extension-id
+
+# Generated packages / build output
+*.xpi
+*.zip
+signed/
+sign-source/
+listed-upload/
+web-ext-artifacts/
+node_modules/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

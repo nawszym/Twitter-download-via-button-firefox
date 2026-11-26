@@ -1,0 +1,57 @@
+﻿{
+  "manifest_version": 2,
+  "name": "Twitter Media via Button",
+  "version": "1.1.6",
+  "description": "Adds a download button on top of every image, video and GIF on Twitter/X. Each item in a carousel gets its own button, and the best available quality is always downloaded.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "twitter-media-via-button@local.addon",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["websiteActivity"]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  },
+  "icons": {
+    "48": "icon-48.png",
+    "96": "icon-96.png"
+  },
+  "permissions": [
+    "downloads",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.fxtwitter.com/*",
+    "*://twitter.com/*",
+    "*://www.twitter.com/*",
+    "*://x.com/*",
+    "*://www.x.com/*",
+    "*://*.twimg.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://twitter.com/*",
+        "*://www.twitter.com/*",
+        "*://x.com/*",
+        "*://www.x.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
+
+
+
+
+
+
